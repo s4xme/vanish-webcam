@@ -42,6 +42,4 @@ OpenCV reads the webcam and displays the result. MediaPipe Hands checks for an o
 
 For a clean disappearance, keep the camera still and capture the background with nobody in frame. Moving objects, changing light, or camera movement can make the replacement noticeable. The effect replaces the full frame; it does not cut a person out of a moving background.
 
-## License
 
-No license is included yet. Choose and add a license before inviting others to reuse or redistribute the code.
