@@ -1,0 +1,22 @@
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local environment and editor files
+.env
+.vscode/
+.idea/
+*.swp
+
+# Windows and packaging output
+Thumbs.db
+Desktop.ini
+build/
+dist/
+*.spec
+
+# Local duplicate/backup copy; the canonical app is palm_vanish.py
+palm_vanish - Copy.py
