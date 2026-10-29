@@ -1,6 +1,6 @@
 # Palm Vanish
 
-A small Windows webcam effect: hold an open palm in view or bring both hands together in the Namaste/prayer pose, and the app fades you into the empty background. Repeat either gesture to return.
+A small Windows webcam effect: hold an open palm in view or bring both hands together in the Namaste/prayer pose 🙏🏻, and the app fades you into the empty background. Repeat either gesture to return.
 
 The webcam frames are processed locally. The app does not record or upload video.
 
@@ -27,7 +27,7 @@ The webcam frames are processed locally. The app does not record or upload video
    ```
 
 5. Step out of view for four seconds while the app captures the background.
-6. Return to frame and hold either an open palm toward the camera or both hands upright together in the **Namaste/prayer pose** (palms pressed together, fingers pointing up) for at least half a second. The progress ring fills, then the app animates the vanish. Lower your hand or separate your hands, then repeat either gesture to reappear.
+6. Return to frame and hold either an open palm toward the camera or both hands upright together in the **Namaste/prayer pose** 🙏🏻 (palms pressed together, fingers pointing up) for at least half a second. The progress ring fills, then the app animates the vanish. Lower your hand or separate your hands, then repeat either gesture to reappear.
 
 ## Controls
 
