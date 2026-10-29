@@ -1,45 +1,79 @@
 # Palm Vanish
 
-A small Windows webcam effect: hold an open palm in view or bring both hands together in the Namaste/prayer pose 🙏🏻, and the app fades you into the empty background. Repeat either gesture to return.
+Make yourself disappear from your webcam with a hand gesture. Hold up an open palm or bring both hands together in a **Namaste/prayer pose** and Palm Vanish smoothly fades you into the empty background. Repeat either gesture to reappear.
 
-The webcam frames are processed locally. The app does not record or upload video.
+The camera feed is processed on your computer. The app does not record or upload video.
+
+## Features
+
+- Open-palm and Namaste/prayer-pose gesture controls
+- A half-second hold with an on-screen progress ring
+- Smooth fade animation for disappearing and reappearing
+- Background recapture with the **B** key
+- Simple Python API and command-line launcher
 
 ## Requirements
 
 - Windows 10 or 11
-- Python 3.10 or 3.11
+- Python 3.10, 3.11, or 3.12
 - A webcam
 
-## Install and run
+## Install from GitHub
 
-1. Install Python and make sure the Python launcher (`py`) is available.
-2. Open PowerShell in this folder.
-3. Install the dependencies:
+Until the first PyPI release is available, install the package from this repository:
 
-   ```powershell
-   py -m pip install -r requirements.txt
-   ```
+```powershell
+git clone https://github.com/s4xme/vanish-webcam.git
+cd vanish-webcam
+py -m pip install .
+```
 
-4. Double-click `Run Palm Vanish.bat`, or run:
+## Use it in Python
 
-   ```powershell
-   py palm_vanish.py
-   ```
+```python
+from palm_vanish import start
 
-5. Step out of view for four seconds while the app captures the background.
-6. Return to frame and hold either an open palm toward the camera or both hands upright together in the **Namaste/prayer pose** 🙏🏻 (palms pressed together, fingers pointing up) for at least half a second. The progress ring fills, then the app animates the vanish. Lower your hand or separate your hands, then repeat either gesture to reappear.
+start()
+```
+
+`start()` opens the webcam window and runs until you press **Q** or **Esc**. You can choose a camera and resolution with `start(camera=1, width=1280, height=720)`.
+
+After the package is published on PyPI, install it with:
+
+```powershell
+py -m pip install palm-vanish
+```
+
+The distribution name is `palm-vanish`; the Python import name is `palm_vanish`.
+
+## Run the app
+
+After installing from the repository, start the command-line app with:
+
+```powershell
+palm-vanish
+```
+
+Or double-click `Run Palm Vanish.bat`. To select a different camera, run `palm-vanish --camera 1`.
+
+Step out of view for four seconds when the app starts so it can capture the empty background. Then return to frame and hold either:
+
+- **Open palm:** raise one hand toward the camera with your fingers extended.
+- **Namaste/prayer pose:** hold both hands upright together, palms touching and fingers pointing up.
+
+Keep the gesture visible for at least half a second. Lower your hand or separate your hands before repeating the gesture to switch back.
 
 ## Controls
 
 - **Q** or **Esc**: quit
-- **B**: capture the background again (step out of view during capture)
-
-If the default webcam does not open, try another camera index, such as `py palm_vanish.py --camera 1`.
+- **B**: capture the background again; step out of view while it captures
 
 ## How it works
 
-OpenCV reads the webcam and displays the result. MediaPipe Hands checks for an open palm or two upright hands close together in the Namaste/prayer pose. After either gesture is held for half a second, the app cross-fades between the live camera frame and a background captured at startup.
+OpenCV reads and displays the webcam video. MediaPipe Hands recognizes the gestures. When a gesture is held long enough, Palm Vanish cross-fades the live frame with a background captured at startup.
 
-For a clean disappearance, keep the camera still and capture the background with nobody in frame. Moving objects, changing light, or camera movement can make the replacement noticeable. The effect replaces the full frame; it does not cut a person out of a moving background.
+The effect works best with a stationary camera and steady lighting. It replaces the full image with the captured background; movement in the room or camera can make the effect visible.
 
+## License
 
+This repository does not have a license file yet. A license must be added to clearly grant permission for others to reuse or redistribute the code.
